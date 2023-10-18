@@ -1,0 +1,55 @@
+$colors: (
+  main: #46909b,
+  secondary: #71b4be,
+  course-color: rgb(154, 33, 33),
+  school-color: rgb(154, 33, 33),
+);
+
+body {
+  background-color: map-get($map: $colors, $key: main);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.course {
+  color: map-get($map: $colors, $key: course-color);
+  font-weight: bold;
+}
+
+.school {
+  color: map-get($map: $colors, $key: school-color);
+}
+.overview {
+  display: flex;
+  flex-direction: column;
+  background-color: map-get($map: $colors, $key: secondary);
+  padding: 1rem 1rem;
+  border-radius: 10px;
+
+  img {
+    max-width: 10rem;
+    width: 80%;
+    align-self: center;
+  }
+
+  section {
+    padding: 0 1rem;
+  }
+
+  article {
+    padding: 0.2rem 0;
+
+    .overview--education--title {
+      font-weight: bold;
+      font-size: 1.11rem;
+    }
+  }
+
+  @media (min-width: 40rem) {
+    flex-direction: row;
+  }
+}

@@ -11,7 +11,7 @@ import Skills from "./Skills";
 // Footer
 function App() {
   return (
-    <main>
+    <main className="app">
       <Overview />
       <Modal />
       <Skills />

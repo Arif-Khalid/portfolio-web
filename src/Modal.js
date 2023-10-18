@@ -1,5 +1,3 @@
-export default function Modal(){
-    return <div>
-        👈👉
-    </div>
+export default function Modal() {
+  return <div className="modal">👈👉</div>;
 }
