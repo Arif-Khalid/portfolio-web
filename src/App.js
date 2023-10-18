@@ -2,6 +2,7 @@ import "./App.css";
 import Footer from "./Footer";
 import Modal from "./Modal";
 import Overview from "./Overview";
+import Secret from "./Secret";
 import Skills from "./Skills";
 // Plan for Portfolio
 // Overview
@@ -14,6 +15,7 @@ function App() {
       <Overview />
       <Modal />
       <Skills />
+      <Secret />
       <Footer />
     </main>
   );
