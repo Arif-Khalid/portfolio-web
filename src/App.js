@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import "./App.css";
 import Footer from "./Footer";
 import Modal from "./Modal";
