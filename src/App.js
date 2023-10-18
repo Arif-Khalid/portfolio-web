@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Footer from "./Footer";
+import Modal from "./Modal";
+import Overview from "./Overview";
+import Skills from "./Skills";
+// Plan for Portfolio
+// Overview
+// Modal of past work with < > to scroll horizontally
+// Skills categorized
+// Footer
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Overview />
+      <Modal />
+      <Skills />
+      <Footer />
+    </main>
   );
 }
 
