@@ -25,8 +25,8 @@ export default function Header() {
       </div>
       <div className="nav--name">Arif K.</div>
       <div className="nav--links hide-on-mobile">
-        <button>Projects</button>
-        <button>Skills</button>
+        <button className="btn">Projects</button>
+        <button className="btn">Skills</button>
       </div>
       <div className="nav--availability">
         <div>Available</div>

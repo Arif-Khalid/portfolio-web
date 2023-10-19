@@ -4,6 +4,7 @@ $colors: (
   secondary: #228291,
   onSecondary: rgb(10, 68, 86),
   tertiary: #249eaf,
+  onImage: #bf6810af,
   course-color: rgb(154, 33, 33),
   school-color: rgb(154, 33, 33),
 );
@@ -24,17 +25,20 @@ nav {
   color: map-get($map: $colors, $key: onMain);
   top: 0;
   left: 0;
-  padding: 0.5rem;
+  padding: 2rem;
   position: fixed;
   width: 100%;
   height: $nav-height;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
+  background-color: rgba(map-get($map: $colors, $key: main), 0.5);
 
   .nav--name {
     width: $navbar-child-width;
     font-size: 2rem;
+    font-weight: bold;
     z-index: 10;
   }
 
@@ -131,6 +135,7 @@ nav {
 .app {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 6vh 1rem 0 1rem;
 }
 
@@ -148,10 +153,10 @@ nav {
   color: map-get($map: $colors, $key: onSecondary);
   padding: 1rem 1rem;
   border-radius: 10px;
-  box-shadow: 0 0 1rem black;
-
+  box-shadow: 0 0.2rem 1rem black;
+  max-width: 70rem;
   img {
-    max-width: 10rem;
+    max-width: 15rem;
     width: 80%;
     align-self: center;
     border-radius: 50%;
@@ -160,20 +165,95 @@ nav {
 
   section {
     padding: 0 1rem;
+
+    @media (min-width: 60rem) {
+      display: flex;
+    }
   }
 
   article {
     padding: 0.2rem 0;
+  }
 
-    .overview--education--title {
-      font-weight: bold;
-      font-size: 1.11rem;
-      margin-bottom: 0.5rem;
+  .overview--education {
+    min-width: 12rem;
+    @media (min-width: 60rem) {
+      margin-left: 1rem;
     }
   }
 
   @media (min-width: 40rem) {
     flex-direction: row;
+  }
+}
+
+.modal {
+  margin: 5rem 0;
+  height: 50rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .arrow {
+    position: absolute;
+    width: 5%;
+    height: fit-content;
+    &.arrow--left {
+      left: 1rem;
+    }
+    &.arrow--right {
+      right: 1rem;
+    }
+  }
+
+  .project {
+    position: relative;
+    height: 60%;
+    width: 80%;
+    max-width: 50rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    .overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        to top,
+        rgba(map-get($map: $colors, $key: main), 0.5),
+        transparent
+      );
+      padding: 1rem 1rem;
+      display: flex;
+      opacity: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s ease-in-out;
+      color: white;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      .title {
+        background-color: map-get($map: $colors, $key: onImage);
+        font-size: 2rem;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+
+      .description {
+        text-align: center;
+        margin-top: 1rem;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 }
 

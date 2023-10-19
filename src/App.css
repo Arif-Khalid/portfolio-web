@@ -11,17 +11,20 @@ nav {
   color: #c3c3c3;
   top: 0;
   left: 0;
-  padding: 0.5rem;
+  padding: 2rem;
   position: fixed;
   width: 100%;
   height: 6vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
+  background-color: rgba(52, 52, 52, 0.5);
 }
 nav .nav--name {
   width: 7rem;
   font-size: 2rem;
+  font-weight: bold;
   z-index: 10;
 }
 nav .nav--menu {
@@ -111,6 +114,7 @@ nav .nav--availability {
 .app {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 6vh 1rem 0 1rem;
 }
 
@@ -129,10 +133,11 @@ nav .nav--availability {
   color: rgb(10, 68, 86);
   padding: 1rem 1rem;
   border-radius: 10px;
-  box-shadow: 0 0 1rem black;
+  box-shadow: 0 0.2rem 1rem black;
+  max-width: 70rem;
 }
 .overview img {
-  max-width: 10rem;
+  max-width: 15rem;
   width: 80%;
   align-self: center;
   border-radius: 50%;
@@ -140,18 +145,87 @@ nav .nav--availability {
 .overview section {
   padding: 0 1rem;
 }
+@media (min-width: 60rem) {
+  .overview section {
+    display: flex;
+  }
+}
 .overview article {
   padding: 0.2rem 0;
 }
-.overview article .overview--education--title {
-  font-weight: bold;
-  font-size: 1.11rem;
-  margin-bottom: 0.5rem;
+.overview .overview--education {
+  min-width: 12rem;
+}
+@media (min-width: 60rem) {
+  .overview .overview--education {
+    margin-left: 1rem;
+  }
 }
 @media (min-width: 40rem) {
   .overview {
     flex-direction: row;
   }
+}
+
+.modal {
+  margin: 5rem 0;
+  height: 50rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .arrow {
+  position: absolute;
+  width: 5%;
+  height: fit-content;
+}
+.modal .arrow.arrow--left {
+  left: 1rem;
+}
+.modal .arrow.arrow--right {
+  right: 1rem;
+}
+.modal .project {
+  position: relative;
+  height: 60%;
+  width: 80%;
+  max-width: 50rem;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.modal .project .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(52, 52, 52, 0.5), transparent);
+  padding: 1rem 1rem;
+  display: flex;
+  opacity: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-in-out;
+  color: white;
+}
+.modal .project .overlay:hover {
+  opacity: 1;
+}
+.modal .project .overlay .title {
+  background-color: rgba(191, 104, 16, 0.6862745098);
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.modal .project .overlay .description {
+  text-align: center;
+  margin-top: 1rem;
+}
+.modal .project img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 40rem) {
