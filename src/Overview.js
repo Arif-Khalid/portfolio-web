@@ -2,7 +2,7 @@ export default function Overview() {
   // todo include picture of me at the side
   return (
     <div className="overview">
-      <img src="logo192.png" alt="test" />
+      <img src="profilePic.png" alt="test" />
       <section className="overview--about">
         <h1>Who am I?</h1>
         <article className="overview--about--description">
