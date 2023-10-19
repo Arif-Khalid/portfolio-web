@@ -179,7 +179,7 @@ nav {
 
 .mobile-only {
   @media (min-width: 40rem) {
-    display: none;
+    display: none !important;
   }
 }
 
